@@ -5,13 +5,12 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <table>
-    <thead>
+    <table class="table table-bordered">
+    <thead> 
     <tr>
       <th class='text-center' colspan="2">Product</th>
-      <th>Unit Price</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th class='text-center'>Quantity</th>
+      <th class='text-center'>Price</th>
     </tr>
   </thead>
     <% @order.line_items.each do |item| %>
@@ -19,6 +18,7 @@
     <% end %>
     </table>
     <p class='text-right'>Total: <%= humanized_money_with_symbol @order.total_cents / 100.00 %></p>
+    <p class='text-right'>Order processed for: <%= @order.email %> </p>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
