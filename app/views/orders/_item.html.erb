@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    <%= image_tag item.product.image.tiny %>
+  </td>
+  <td>
+    <h4><%= item.product.name %></h4>
+    <br>
+    <h5><%= item.product.description %></h5>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol item.product.price %>
+  </td>
+  <td class="text-center">
+  <%= quantity %>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol item.product.price * quantity %>
+  </td>
+</tr>
+
