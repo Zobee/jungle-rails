@@ -1,2 +1,10 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 class='text-center'>Admin Dashboard</h1>
+<div>
+<h2>Here are some metrics about our products:</h2>
+  <ul class="list-group">
+    <li class="list-group-item"> Number of Products for Sale: <%= @num_products %>  </li>
+    <li class="list-group-item"> Number of Products Still in Stock: <%= @num_products_in_stock %>  </li>
+    <li class="list-group-item"> Total Stock: <%= @num_total_products %> </li>
+    <li class="list-group-item"> Number of Categories: <%= @num_categories %>  </li>
+  </ul>
+</div>
