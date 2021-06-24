@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = user.find_by_email(params[:email])
+    user = User.find_by_email(params[:email])
     #If user exists && pw is correct
     if user && user.authenticate(params[:password])
       #Save uid inside cookie
