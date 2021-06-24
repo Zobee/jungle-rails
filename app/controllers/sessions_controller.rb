@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     #If user exists && pw is correct
     if user && user.authenticate(params[:password])
       #Save uid inside cookie
-      session[:user_id] = user_id
+      session[:user_id] = user.id
       redirect_to '/'
     else
       redirect_to '/login'
