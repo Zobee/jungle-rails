@@ -9,7 +9,12 @@
 <body>
 
   <%= render 'layouts/top_nav' %>
-
+  <% sale = active_sale? %>
+  <% if sale %>
+    <p class="alert alert-info">
+    There's an active <%= sale.name %> sale going on until <%= sale.ends_on %>!
+    </p> 
+  <% end %>
   <main class="container">
     <%= yield %>
   </main>
