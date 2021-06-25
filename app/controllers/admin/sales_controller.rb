@@ -18,6 +18,6 @@ class Admin::SalesController < ApplicationController
 
   private
   def sale_params
-    params.require(:category).permit(:name, :percent_off, :starts_on, :ends_on)
+    params.require(:sale).permit(:name, :percent_off, :starts_on, :ends_on)
   end
 end
