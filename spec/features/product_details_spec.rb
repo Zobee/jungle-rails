@@ -25,16 +25,15 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       )
     end
   end
-  scenario "User can navigate from the home page to the product detail page by clicking on a product" do
+  scenario "User can navigate from the home page to the product detail page by clicking on the Details page of a product" do
     # ACT
     visit root_path
     expect(page).to have_css 'article.product-detail', count: 0
-    within(page.all('footer.actions').first) do
+    within(page.all('article.product').first) do
       click_on 'Details'
     end
     # DEBUG / VERIFY
     expect(page).to have_css 'article.product-detail', count: 1
     save_screenshot
-    puts page.html
   end
 end
