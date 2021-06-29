@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks For Your Order!</h1>
+    <h5>Order #<%= @order.id %>:</h5>
+    <table class="table table-bordered">
+    <thead> 
+    <tr>
+      <th class='text-center' colspan="2">Product</th>
+      <th class='text-center'>Quantity</th>
+      <th class='text-center'>Price</th>
+    </tr>
+  </thead>
+    <% @order.line_items.each do |item| %>
+      <%= render 'item', item: item, quantity: item.quantity.to_i %>
+    <% end %>
+    </table>
+    <p class='text-right'>Total: <%= humanized_money_with_symbol @order.total_cents / 100.00 %></p>
+  </body>
+</html>
